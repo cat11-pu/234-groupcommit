@@ -1,8 +1,8 @@
-// batch.js：两个触发条件（基线：一律给假）
+// batch.js：两个触发条件（含等于）
 export function reached(limit, pending) {
-  return false;
+  return pending >= limit;
 }
 
 export function timedOut(gap, last, now) {
-  return false;
+  return now - last >= gap;
 }
